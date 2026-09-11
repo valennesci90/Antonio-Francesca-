@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Fantawedding Francesca & Antonio</title>
 
 <style>
@@ -12,7 +13,7 @@ body{
 margin:0;
 font-family:Arial,Helvetica,sans-serif;
 background:#f4f8f5;
-color:#26382c;
+color:#26382c
 }
 
 header{
@@ -20,24 +21,24 @@ background:linear-gradient(135deg,#315c43,#6f9477);
 color:white;
 text-align:center;
 padding:45px 20px 35px;
-border-radius:0 0 30px 30px;
+border-radius:0 0 30px 30px
 }
 
 header h1{
 font-family:Georgia,serif;
 font-size:42px;
-margin:0 0 8px;
+margin:0 0 8px
 }
 
 header p{
 font-size:18px;
-margin:6px;
+margin:6px
 }
 
 .container{
 max-width:760px;
 margin:auto;
-padding:18px;
+padding:18px
 }
 
 .card{
@@ -45,12 +46,12 @@ background:white;
 margin:18px 0;
 padding:24px;
 border-radius:22px;
-box-shadow:0 5px 18px rgba(0,0,0,.08);
+box-shadow:0 5px 18px rgba(0,0,0,.08)
 }
 
 h2{
 color:#315c43;
-margin-top:0;
+margin-top:0
 }
 
 input,select{
@@ -59,7 +60,7 @@ padding:14px;
 margin:8px 0;
 border:1px solid #ccd8ce;
 border-radius:12px;
-font-size:16px;
+font-size:16px
 }
 
 button{
@@ -72,11 +73,11 @@ color:white;
 font-size:16px;
 font-weight:bold;
 cursor:pointer;
-margin-top:10px;
+margin-top:10px
 }
 
 button:hover{
-background:#244833;
+background:#244833
 }
 
 .score{
@@ -84,52 +85,49 @@ background:#e8f0e9;
 padding:18px;
 border-radius:15px;
 text-align:center;
-font-size:22px;
-font-weight:bold;
+font-size:25px;
+font-weight:bold
 }
 
 .game{
 border-left:5px solid #6f9477;
 padding-left:15px;
-margin-bottom:28px;
-}
-
-.hidden{
-display:none;
+margin-bottom:28px
 }
 
 .nav{
 display:grid;
 grid-template-columns:repeat(4,1fr);
 gap:8px;
-margin-bottom:15px;
+margin-bottom:15px
 }
 
 .nav button{
 font-size:13px;
 padding:12px 5px;
-margin:0;
+margin:0
 }
 
 .section{
-display:none;
+display:none
 }
 
 .section.active{
-display:block;
+display:block
 }
 
 .rank{
 display:flex;
 justify-content:space-between;
-padding:13px;
-border-bottom:1px solid #e4ebe5;
+align-items:center;
+padding:14px;
+border-bottom:1px solid #e4ebe5
 }
 
 .rank:first-child{
 font-weight:bold;
 background:#edf5ef;
-border-radius:10px;
+border-radius:10px
 }
 
 .badge{
@@ -138,7 +136,7 @@ background:#e8f0e9;
 padding:6px 10px;
 border-radius:20px;
 margin:3px;
-font-size:13px;
+font-size:13px
 }
 
 .success{
@@ -146,14 +144,20 @@ background:#eaf6ed;
 color:#285d38;
 padding:13px;
 border-radius:12px;
-margin-top:12px;
+margin-top:12px
+}
+
+.loading{
+text-align:center;
+padding:15px;
+color:#607365
 }
 
 footer{
 text-align:center;
 padding:30px;
 color:#607365;
-font-size:14px;
+font-size:14px
 }
 
 @media(max-width:600px){
@@ -182,9 +186,12 @@ header h1{font-size:32px}
 <button onclick="showSection('squadra')">👥 Squadra</button>
 </div>
 
+<!-- HOME -->
+
 <div id="home" class="section active">
 
 <div class="card">
+
 <h2>💍 Benvenuti!</h2>
 
 <p>
@@ -203,26 +210,32 @@ ENTRA NEL FANTAWEDDING 💚
 </button>
 
 <div id="benvenuto"></div>
+
 </div>
 
 <div class="card">
-<h2>🏆 Il tuo punteggio</h2>
+
+<h2>🏆 Punteggio squadra</h2>
 
 <div class="score">
 <span id="punti">0</span> punti
 </div>
-</div>
 
 </div>
 
+</div>
+
+
+<!-- SQUADRA -->
 
 <div id="squadra" class="section">
 
 <div class="card">
 
-<h2>👥 La tua squadra</h2>
+<h2>👥 Crea la tua squadra</h2>
 
-<input id="nomeSquadra" placeholder="Nome della squadra">
+<input id="nomeSquadra"
+placeholder="Nome della squadra">
 
 <button onclick="creaSquadra()">
 CREA SQUADRA
@@ -234,14 +247,18 @@ CREA SQUADRA
 
 <div class="card">
 
-<h2>👥 Squadre registrate</h2>
+<h2>👥 Squadre</h2>
 
-<div id="elencoSquadre"></div>
-
+<div id="elencoSquadre">
+<div class="loading">Caricamento...</div>
 </div>
 
 </div>
 
+</div>
+
+
+<!-- GIOCHI -->
 
 <div id="giochi" class="section">
 
@@ -251,34 +268,34 @@ CREA SQUADRA
 
 <div class="game">
 
-<h3>1️⃣ Quanto conosci gli sposi?</h3>
+<h3>1️⃣ Quiz sugli sposi</h3>
 
 <p><b>Chi dei due è più puntuale?</b></p>
 
 <select id="q1">
 <option value="">Scegli...</option>
-<option value="Francesca">Francesca</option>
-<option value="Antonio">Antonio</option>
+<option>Francesca</option>
+<option>Antonio</option>
 </select>
 
 <p><b>Chi ha fatto il primo passo?</b></p>
 
 <select id="q2">
 <option value="">Scegli...</option>
-<option value="Francesca">Francesca</option>
-<option value="Antonio">Antonio</option>
+<option>Francesca</option>
+<option>Antonio</option>
 </select>
 
-<p><b>Chi dei due è più romantico?</b></p>
+<p><b>Chi è più romantico?</b></p>
 
 <select id="q3">
 <option value="">Scegli...</option>
-<option value="Francesca">Francesca</option>
-<option value="Antonio">Antonio</option>
+<option>Francesca</option>
+<option>Antonio</option>
 </select>
 
 <button onclick="quiz()">
-CONFERMA RISPOSTE
+CONFERMA +10 PUNTI
 </button>
 
 </div>
@@ -286,16 +303,19 @@ CONFERMA RISPOSTE
 
 <div class="game">
 
-<h3>2️⃣ Pronostico matrimonio 🔮</h3>
+<h3>2️⃣ Pronostico 🔮</h3>
 
 <p>
 Quanti minuti di ritardo avrà la sposa?
 </p>
 
-<input id="ritardo" type="number" min="0" placeholder="Inserisci i minuti">
+<input id="ritardo"
+type="number"
+min="0"
+placeholder="Minuti">
 
 <button onclick="pronostico()">
-SALVA PRONOSTICO
+SALVA +10 PUNTI
 </button>
 
 </div>
@@ -306,16 +326,16 @@ SALVA PRONOSTICO
 <h3>3️⃣ Foto Challenge 📸</h3>
 
 <p>
-Realizza una delle seguenti foto:
+Realizza una foto con una delle seguenti missioni:
 </p>
 
-<span class="badge">🥂 Foto con gli sposi</span>
-<span class="badge">💃 Foto mentre balli</span>
-<span class="badge">😂 Foto più divertente</span>
-<span class="badge">❤️ Foto più romantica</span>
+<span class="badge">🥂 Con gli sposi</span>
+<span class="badge">💃 Mentre balli</span>
+<span class="badge">😂 Più divertente</span>
+<span class="badge">❤️ Più romantica</span>
 
 <button onclick="challenge(15)">
-COMPLETA CHALLENGE +15
+COMPLETA +15 PUNTI
 </button>
 
 </div>
@@ -323,17 +343,17 @@ COMPLETA CHALLENGE +15
 
 <div class="game">
 
-<h3>4️⃣ La sfida degli invitati 🎉</h3>
+<h3>4️⃣ Sfida invitati 🎉</h3>
 
 <ul>
-<li>👰 Persona vestita di verde</li>
+<li>👗 Persona vestita di verde</li>
 <li>💍 Coppia sposata da più di 20 anni</li>
 <li>😂 Invitato più scatenato</li>
 <li>📸 Selfie più bello</li>
 </ul>
 
 <button onclick="challenge(10)">
-MISSIONE COMPLETATA +10
+MISSIONE +10 PUNTI
 </button>
 
 </div>
@@ -343,14 +363,20 @@ MISSIONE COMPLETATA +10
 </div>
 
 
+<!-- CLASSIFICA -->
+
 <div id="classifica" class="section">
 
 <div class="card">
 
-<h2>🏆 CLASSIFICA</h2>
+<h2>🏆 CLASSIFICA LIVE</h2>
+
+<p>
+La classifica viene aggiornata automaticamente per tutti gli invitati.
+</p>
 
 <div id="classificaLista">
-Nessuna squadra ancora registrata.
+<div class="loading">Caricamento classifica...</div>
 </div>
 
 </div>
@@ -358,6 +384,7 @@ Nessuna squadra ancora registrata.
 </div>
 
 </div>
+
 
 <footer>
 Fantawedding Francesca & Antonio 💚<br>
@@ -365,20 +392,34 @@ Fantawedding Francesca & Antonio 💚<br>
 </footer>
 
 
+<!-- FIREBASE -->
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+
 <script>
 
+const firebaseConfig = {
+  apiKey: "AIzaSyD9WAyWwJhaMh_XZ-HyWG2B-cCe_7V06rY",
+  authDomain: "fantawedding-francesca-antonio.firebaseapp.com",
+  databaseURL: "https://fantawedding-francesca-antonio-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "fantawedding-francesca-antonio",
+  storageBucket: "fantawedding-francesca-antonio.firebasestorage.app",
+  messagingSenderId: "861316012626",
+  appId: "1:861316012626:web:2c71a1d2e2cb55b4c55d8b",
+  measurementId: "G-DBLDLEHM91"
+};
+
+firebase.initializeApp(firebaseConfig);
+
+const db=firebase.database();
+
 let giocatore="";
-let punti=0;
+let squadraAttiva="";
+let puntiLocali=0;
 
-let squadre=
-JSON.parse(localStorage.getItem("fantaweddingSquadre") || "[]");
 
-function salva(){
-localStorage.setItem(
-"fantaweddingSquadre",
-JSON.stringify(squadre)
-);
-}
+/* NAVIGAZIONE */
 
 function showSection(id){
 
@@ -390,13 +431,17 @@ el.classList.remove("active");
 document.getElementById(id)
 .classList.add("active");
 
-aggiornaClassifica();
-aggiornaSquadre();
 }
+
+
+/* NOME GIOCATORE */
 
 function entra(){
 
-let nome=document.getElementById("nome").value.trim();
+let nome=document
+.getElementById("nome")
+.value
+.trim();
 
 if(!nome){
 alert("Inserisci il tuo nome!");
@@ -405,10 +450,21 @@ return;
 
 giocatore=nome;
 
-document.getElementById("benvenuto").innerHTML=
-'<div class="success">Benvenuta/o '+nome+'! 🎉</div>';
+localStorage.setItem(
+"fantawedding_nome",
+nome
+);
+
+document.getElementById("benvenuto")
+.innerHTML=
+'<div class="success">Benvenuto/a '+
+nome+
+'! 🎉</div>';
 
 }
+
+
+/* CREA SQUADRA */
 
 function creaSquadra(){
 
@@ -422,50 +478,109 @@ alert("Inserisci il nome della squadra!");
 return;
 }
 
-if(squadre.some(function(s){
-return s.nome.toLowerCase()===nome.toLowerCase();
-})){
-alert("Questa squadra esiste già!");
-return;
-}
+let id=
+nome
+.toLowerCase()
+.replace(/[^a-z0-9]+/g,"_")
++"_"+Date.now();
 
-squadre.push({
+db.ref("squadre/"+id).set({
+
 nome:nome,
-punti:0
-});
+punti:0,
+creataDa:giocatore || "Invitato",
+data:Date.now()
 
-salva();
+})
+.then(function(){
+
+squadraAttiva=id;
+
+localStorage.setItem(
+"fantawedding_squadra",
+id
+);
 
 document.getElementById("nomeSquadra").value="";
 
-document.getElementById("squadraMsg").innerHTML=
+document.getElementById("squadraMsg")
+.innerHTML=
 '<div class="success">Squadra "'+
 nome+
 '" creata! 🎉</div>';
 
-aggiornaSquadre();
-aggiornaClassifica();
+aggiornaPunteggio();
+
+})
+.catch(function(error){
+
+alert(
+"Errore Firebase: "+
+error.message
+);
+
+});
 
 }
 
-function aggiungiPunti(numero){
 
-punti += numero;
+/* AGGIUNGI PUNTI */
 
-document.getElementById("punti")
-.textContent=punti;
+function aggiungiPunti(numero,descrizione){
 
-if(squadre.length>0){
+if(!squadraAttiva){
 
-squadre[0].punti += numero;
+alert(
+"Prima devi creare una squadra!"
+);
 
-salva();
+showSection("squadra");
 
-aggiornaClassifica();
+return;
+
+}
+
+let ref=
+db.ref("squadre/"+squadraAttiva);
+
+ref.transaction(function(squadra){
+
+if(squadra){
+
+squadra.punti=
+(squadra.punti || 0)+numero;
 
 }
 
+return squadra;
+
+})
+.then(function(){
+
+db.ref(
+"azioni/"+Date.now()
+).set({
+
+squadra:squadraAttiva,
+punti:numero,
+descrizione:descrizione,
+giocatore:giocatore,
+data:Date.now()
+
+});
+
+alert(
+"🎉 +"+
+numero+
+" punti!"
+);
+
+});
+
 }
+
+
+/* QUIZ */
 
 function quiz(){
 
@@ -474,83 +589,128 @@ let q2=document.getElementById("q2").value;
 let q3=document.getElementById("q3").value;
 
 if(!q1 || !q2 || !q3){
-alert("Rispondi a tutte le domande!");
-return;
-}
-
-let bonus=10;
-
-aggiungiPunti(bonus);
 
 alert(
-"Risposte registrate! +"+
-bonus+
-" punti 🎉"
+"Rispondi a tutte le domande!"
+);
+
+return;
+
+}
+
+aggiungiPunti(
+10,
+"Quiz sugli sposi"
 );
 
 }
+
+
+/* PRONOSTICO */
 
 function pronostico(){
 
-let ritardo=document
-.getElementById("ritardo")
-.value;
+let ritardo=
+document.getElementById("ritardo").value;
 
 if(ritardo===""){
-alert("Inserisci il tuo pronostico!");
-return;
-}
-
-aggiungiPunti(10);
 
 alert(
-"Pronostico salvato! +10 punti 🔮"
+"Inserisci il tuo pronostico!"
+);
+
+return;
+
+}
+
+db.ref(
+"pronostici/"+Date.now()
+).set({
+
+squadra:squadraAttiva,
+giocatore:giocatore,
+ritardo:Number(ritardo),
+data:Date.now()
+
+});
+
+aggiungiPunti(
+10,
+"Pronostico"
 );
 
 }
+
+
+/* CHALLENGE */
 
 function challenge(numero){
 
-aggiungiPunti(numero);
-
-alert(
-"Challenge completata! +"+
-numero+
-" punti 🎉"
+aggiungiPunti(
+numero,
+"Foto/Sfida"
 );
 
 }
 
+
+/* CLASSIFICA LIVE */
+
 function aggiornaClassifica(){
 
-let box=document
-.getElementById("classificaLista");
+db.ref("squadre")
+.on("value",function(snapshot){
 
-if(!squadre.length){
+let lista=[];
+
+snapshot.forEach(function(child){
+
+let s=child.val();
+
+lista.push({
+
+id:child.key,
+nome:s.nome,
+punti:s.punti || 0
+
+});
+
+});
+
+lista.sort(function(a,b){
+
+return b.punti-a.punti;
+
+});
+
+let box=
+document.getElementById(
+"classificaLista"
+);
+
+if(!lista.length){
 
 box.innerHTML=
 "Nessuna squadra ancora registrata.";
 
 return;
-}
 
-let ordinate=[...squadre].sort(
-function(a,b){
-return b.punti-a.punti;
 }
-);
 
 box.innerHTML="";
 
-ordinate.forEach(function(s,i){
+lista.forEach(function(s,i){
 
-let div=document.createElement("div");
+let div=
+document.createElement("div");
 
 div.className="rank";
 
 div.innerHTML=
 "<span>"+
-(i+1)+". "+s.nome+
+(i+1)+
+" 🏆 "+
+s.nome+
 "</span>"+
 "<strong>"+
 s.punti+
@@ -560,41 +720,96 @@ box.appendChild(div);
 
 });
 
+});
+
 }
+
+
+/* ELENCO SQUADRE */
 
 function aggiornaSquadre(){
 
-let box=document
-.getElementById("elencoSquadre");
+db.ref("squadre")
+.on("value",function(snapshot){
 
-if(!squadre.length){
-
-box.innerHTML=
-"Nessuna squadra ancora registrata.";
-
-return;
-}
+let box=
+document.getElementById(
+"elencoSquadre"
+);
 
 box.innerHTML="";
 
-squadre.forEach(function(s){
+snapshot.forEach(function(child){
 
-let div=document.createElement("div");
+let s=child.val();
+
+let div=
+document.createElement("div");
 
 div.className="rank";
 
 div.innerHTML=
-"<span>"+s.nome+"</span>"+
-"<strong>"+s.punti+" punti</strong>";
+"<span>"+
+s.nome+
+"</span>"+
+"<strong>"+
+(s.punti||0)+
+" punti</strong>";
 
 box.appendChild(div);
 
 });
 
+});
+
 }
 
+
+/* PUNTEGGIO DELLA SQUADRA */
+
+function aggiornaPunteggio(){
+
+if(!squadraAttiva)return;
+
+db.ref(
+"squadre/"+squadraAttiva+"/punti"
+)
+.on("value",function(snapshot){
+
+let p=
+snapshot.val() || 0;
+
+puntiLocali=p;
+
+document.getElementById(
+"punti"
+).textContent=p;
+
+});
+
+}
+
+
+/* RECUPERA DATI SALVATI */
+
+giocatore=
+localStorage.getItem(
+"fantawedding_nome"
+) || "";
+
+squadraAttiva=
+localStorage.getItem(
+"fantawedding_squadra"
+) || "";
+
+
+/* AVVIO */
+
 aggiornaClassifica();
+
 aggiornaSquadre();
+
+aggiornaPunteggio();
 
 </script>
 
