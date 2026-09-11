@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fantawedding Francesca & Antonio</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f8f4;
+  color: #26382c;
+}
+
+header {
+  background: linear-gradient(135deg, #315c43, #6f9477);
+  color: white;
+  text-align: center;
+  padding: 45px 20px 35px;
+  border-radius: 0 0 30px 30px;
+}
+
+header h1 {
+  font-family: Georgia, serif;
+  font-size: 42px;
+  margin: 0 0 8px;
+}
+
+header p {
+  font-size: 18px;
+  margin: 5px;
+}
+
+.container {
+  max-width: 700px;
+  margin: auto;
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  margin: 18px 0;
+  padding: 24px;
+  border-radius: 22px;
+  box-shadow: 0 5px 18px rgba(0,0,0,.08);
+}
+
+.card h2 {
+  color: #315c43;
+  margin-top: 0;
+}
+
+input, select {
+  width: 100%;
+  padding: 14px;
+  margin: 8px 0;
+  border: 1px solid #ccd8ce;
+  border-radius: 12px;
+  font-size: 16px;
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 14px;
+  background: #315c43;
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background: #244833;
+}
+
+.score {
+  background: #e8f0e9;
+  padding: 15px;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.game {
+  border-left: 5px solid #6f9477;
+  padding-left: 15px;
+  margin-bottom: 25px;
+}
+
+.hidden {
+  display: none;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #607365;
+  font-size: 14px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Francesca & Antonio</h1>
+  <p>💚 Fantawedding 💚</p>
+  <p>13 Settembre 2026</p>
+</header>
+
+<div class="container">
+
+  <div class="card">
+    <h2>💍 Benvenuti!</h2>
+    <p>
+      Benvenuti al Fantawedding di Francesca e Antonio!
+      Create la vostra squadra, partecipate ai giochi,
+      accumulate punti e scoprite chi sarà il vero campione
+      del matrimonio!
+    </p>
+
+    <input id="nome" type="text" placeholder="Inserisci il tuo nome">
+
+    <button onclick="entra()">ENTRA NEL FANTAWEDDING 💚</button>
+  </div>
+
+  <div id="areaGioco" class="hidden">
+
+    <div class="card">
+      <h2>👤 Giocatore</h2>
+      <p id="benvenuto"></p>
+
+      <div class="score">
+        🏆 Punteggio: <span id="punti">0</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>🎯 I Giochi</h2>
+
+      <div class="game">
+        <h3>1️⃣ Quanto conosci gli sposi?</h3>
+
+        <p><b>Chi dei due è più puntuale?</b></p>
+
+        <select id="q1">
+          <option value="">Scegli...</option>
+          <option value="Francesca">Francesca</option>
+          <option value="Antonio">Antonio</option>
+        </select>
+
+        <p><b>Chi ha fatto il primo passo?</b></p>
+
+        <select id="q2">
+          <option value="">Scegli...</option>
+          <option value="Francesca">Francesca</option>
+          <option value="Antonio">Antonio</option>
+        </select>
+
+        <p><b>Chi dei due è più romantico?</b></p>
+
+        <select id="q3">
+          <option value="">Scegli...</option>
+          <option value="Francesca">Francesca</option>
+          <option value="Antonio">Antonio</option>
+        </select>
+
+        <button onclick="quiz()">CONFERMA RISPOSTE</button>
+      </div>
+
+      <div class="game">
+        <h3>2️⃣ Pronostico matrimonio 🔮</h3>
+
+        <p>Quanti minuti di ritardo avrà la sposa?</p>
+
+        <input id="ritardo" type="number" min="0"
+               placeholder="Inserisci i minuti">
+
+        <button onclick="pronostico()">SALVA PRONOSTICO</button>
+      </div>
+
+      <div class="game">
+        <h3>3️⃣ Foto Challenge 📸</h3>
+
+        <p>
+          Scatta una foto durante il matrimonio rispettando
+          una delle challenge!
+        </p>
+
+        <ul>
+          <li>🥂 Foto con gli sposi</li>
+          <li>💃 Foto mentre balli</li>
+          <li>😂 Foto più divertente</li>
+          <li>❤️ Foto più romantica</li>
+        </ul>
+
+        <button onclick="alert('Challenge registrata! Mostra la foto agli sposi 😍')">
+          HO COMPLETATO LA CHALLENGE
+        </button>
+      </div>
+
+      <div class="game">
+        <h3>4️⃣ La sfida degli invitati 🎉</h3>
+
+        <p>
+          Trova durante la festa:
+        </p>
+
+        <ul>
+          <li>👰 Una persona vestita di verde</li>
+          <li>💍 Una coppia sposata da più di 20 anni</li>
+          <li>😂 L'invitato più scatenato</li>
+          <li>📸 Il selfie più bello della serata</li>
+        </ul>
+
+        <button onclick="alert('Missione completata! +10 punti 🎉')">
+          MISSIONE COMPLETATA
+        </button>
+      </div>
+
+    </div>
+
+    <div class="card">
+      <h2>🏆 Classifica</h2>
+      <p>
+        La classifica ufficiale verrà aggiornata durante
+        la festa dagli organizzatori.
+      </p>
+
+      <div id="classifica">
+        🥇 In attesa dei partecipanti...
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>💚 Messaggio agli sposi</h2>
+
+      <input id="messaggioNome" type="text"
+             placeholder="Il tuo nome">
+
+      <textarea id="messaggio"
+        placeholder="Scrivi un messaggio per Francesca e Antonio..."
+        style="width:100%;height:120px;padding:14px;border:1px solid #ccd8ce;border-radius:12px;font-size:16px;">
+      </textarea>
+
+      <button onclick="messaggio()">INVIA IL TUO AUGURIO 💌</button>
+    </div>
+
+  </div>
+
+</div>
+
+<footer>
+  Francesca & Antonio ❤️ 13.09.2026
+  <br>
+  Fantawedding
+</footer>
+
+<script>
+
+let punti = 0;
+
+function entra() {
+  let nome = document.getElementById("nome").value.trim();
+
+  if (!nome) {
+    alert("Inserisci il tuo nome 😊");
+    return;
+  }
+
+  document.getElementById("benvenuto").innerHTML =
+    "Ciao <b>" + nome + "</b>! Sei ufficialmente nel Fantawedding 🎉";
+
+  document.getElementById("areaGioco").classList.remove("hidden");
+
+  window.scrollTo({
+    top: document.getElementById("areaGioco").offsetTop,
+    behavior: "smooth"
+  });
+}
+
+function quiz() {
+
+  let q1 = document.getElementById("q1").value;
+  let q2 = document.getElementById("q2").value;
+  let q3 = document.getElementById("q3").value;
+
+  if (!q1 || !q2 || !q3) {
+    alert("Rispondi a tutte le domande!");
+    return;
+  }
+
+  punti += 10;
+
+  document.getElementById("punti").innerText = punti;
+
+  alert("Risposte registrate! 🎉 Hai guadagnato 10 punti!");
+}
+
+function pronostico() {
+
+  let valore = document.getElementById("ritardo").value;
+
+  if (valore === "") {
+    alert("Inserisci il tuo pronostico!");
+    return;
+  }
+
+  punti += 5;
+
+  document.getElementById("punti").innerText = punti;
+
+  alert("Pronostico salvato! 🔮 +5 punti");
+}
+
+function messaggio() {
+
+  let nome = document.getElementById("messaggioNome").value;
+  let testo = document.getElementById("messaggio").value;
+
+  if (!nome || !testo.trim()) {
+    alert("Inserisci nome e messaggio ❤️");
+    return;
+  }
+
+  alert("Grazie " + nome + "! Il tuo augurio è stato registrato ❤️");
+}
+
+</script>
+
+</body>
+</html>
